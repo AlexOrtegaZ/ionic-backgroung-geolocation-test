@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Test Geolocation
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  Click below
+  <button ion-button full (click)="toggleBacgroundGeolocation()"
+  [ngClass]="{danger : ($isGeolocationActive | async)  }">
+    {{($isGeolocationActive | async) ? 'Parar' : 'Empezar'}}
+  </button>
+  <p>{{($locations | async | json)}}</p>
+</ion-content>
